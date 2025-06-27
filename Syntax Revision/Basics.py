@@ -80,6 +80,31 @@ else: # If all above are False.
 # For Loop: Iterate over sequence.
 for item in ["a", "b", "c"]:
     print(f"For loop item: {item}")
+    
+# Range: Generates a sequence of numbers.
+for i in range(5): # 0 to 4
+    print(f"Range loop i: {i}")
+    
+# Nested Loop: Loop inside another loop.
+for i in range(2):
+    for j in range(3):
+        print(f"Nested loop i: {i}, j: {j}")
+# For Loop with index: Use enumerate to get index and value.
+for index, value in enumerate(["x", "y", "z"]):
+    print(f"Enumerate loop index: {index}, value: {value}")
+# For Loop with condition: Filter items.
+for i in range(5):
+    if i % 2 == 0: # Only even numbers
+        print(f"Even number: {i}")
+        
+# For Loop with else: Executes after loop completes without break.
+for i in range(3):
+    print(f"For loop with else i: {i}")
+    
+else:
+    print("For loop completed without break.")
+
+
 
 # While Loop: Repeat as long as condition is true.
 count = 0
@@ -115,10 +140,12 @@ print(f"Power (keyword args): {power(exp=4, base=2)}")
 def func_args(*args): # Collects positional args into a tuple
     print(f"Args: {args}")
 func_args(1, 2, 3)
+#output: Args: (1, 2, 3)
 
 def func_kwargs(**kwargs): # Collects keyword args into a dictionary
     print(f"Kwargs: {kwargs}")
 func_kwargs(name="John", age=30)
+#output: Kwargs: {'name': 'John', 'age': 30}
 
 
 # --- 8. Classes & Objects (OOP) ---
@@ -159,6 +186,8 @@ with open(filename, "r") as f: # 'r' for read
 print(f"File Content: '{content}'")
 
 
+
+
 # --- 11. List Comprehensions ---
 # Concise way to create lists. [expression for item in iterable if condition]
 squares = [x**2 for x in range(5)] # [0, 1, 4, 9, 16]
@@ -174,10 +203,11 @@ print(f"Lambda add(7, 3): {add_nums(7, 3)}")
 # --- 13. Decorators ---
 # Modify or enhance functions/methods. @decorator_name
 def logger(func):
-    def wrapper(*args, **kwargs):
+    def wrapper(*args, **kwargs): # Wrapper function to log calls and arguments 
         print(f"Calling {func.__name__} with args: {args}, kwargs: {kwargs}")
         return func(*args, **kwargs)
     return wrapper
+output = logger # Assign the decorator to a variable
 
 @logger # Applies the 'logger' decorator to 'my_func'
 def my_func(a, b):
@@ -224,12 +254,17 @@ if match:
 # --- 18. Type Hinting ---
 # Optional annotations for types. Improves readability & tooling.
 def subtract(a: float, b: float) -> float:
+    """Subtracts two numbers and returns the result."""
+    """Subtracts b from a and returns the result."""    
     return a - b
 
 print(f"Type hinted subtract(10.5, 3.2): {subtract(10.5, 3.2)}")
 
 
 # --- 19. Asynchronous Programming (async/await, asyncio) ---
+# # Asynchronous programming allows concurrent execution of tasks.
+# # Concurrency without threads. For I/O-bound tasks.
+
 # Concurrency without threads. For I/O-bound tasks.
 import asyncio
 
@@ -242,6 +277,7 @@ async def main_async():
     data1 = await fetch_data(1) # Wait for 1 second
     data2 = await fetch_data(0.5) # Wait for 0.5 seconds
     print(f"Async Data: {data1}, {data2}")
+    #output: Async Data: Data after 1 seconds, Data after 0.5 seconds
 
 # asyncio.run(main_async()) # Run the top-level async function
 # NOTE: Cannot run asyncio.run() directly in some environments (like interactive shells)
