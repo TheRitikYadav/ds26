@@ -1,23 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DS26</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python for Data Science Roadmap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Signika Negative', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #0066cc;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.3rem;
+      cursor: pointer;
+    }
+    ul {
+      margin-left: 1rem;
+    }
+    .section-content {
+      display: none;
+      margin-top: 0.5rem;
+    }
+    .active .section-content {
+      display: block;
+    }
+    footer {
+      text-align: center;
+      margin: 3rem 0;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
-    <h1>DS26</h1>
-    <nav>
+  <header>
+    <h1>Python for Data Science Roadmap</h1>
+    <p>A structured path to become a data-savvy Pythonista</p>
+  </header>
+
+  <main>
+    <section class="toggle-section">
+      <h2>1. Python Basics</h2>
+      <div class="section-content">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+          <li>Variables and Data Types</li>
+          <li>Lists, Tuples, Sets, Dictionaries</li>
+          <li>If-Else, Loops (for, while)</li>
+          <li>Functions (def), Lambda</li>
+          <li>List Comprehension</li>
+          <li>Exception Handling</li>
+          <li>Modules and Packages</li>
         </ul>
-    <p>This is a placeholder for the DS26 page.</p>
-    <p>Content will be added here in the future.</p>
-    <footer>
-        <p>&copy; 2025 DS26</p>
-    </footer>
-    
+      </div>
+    </section>
+
+    <section class="toggle-section">
+      <h2>2. File Handling & Libraries</h2>
+      <div class="section-content">
+        <ul>
+          <li>Reading/Writing Files (CSV, TXT, JSON)</li>
+          <li>Importing Libraries (NumPy, Pandas)</li>
+          <li>Virtual Environments (optional)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="toggle-section">
+      <h2>3. NumPy – Numerical Python</h2>
+      <div class="section-content">
+        <ul>
+          <li>Creating Arrays</li>
+          <li>Indexing, Slicing, Operations</li>
+          <li>Broadcasting, Reshape, Flatten</li>
+          <li>Aggregate Functions</li>
+          <li>np.random, Boolean Indexing</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="toggle-section">
+      <h2>4. Pandas – Data Manipulation</h2>
+      <div class="section-content">
+        <ul>
+          <li>Series vs DataFrame</li>
+          <li>Reading & Exporting Data</li>
+          <li>Data Exploration: head(), info()</li>
+          <li>Filtering, Sorting, Indexing</li>
+          <li>Missing Values, GroupBy</li>
+          <li>Merge, Join, Concat, Apply</li>
+          <li>Pivot Tables, Crosstab</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="toggle-section">
+      <h2>5. Data Cleaning & Exploration</h2>
+      <div class="section-content">
+        <ul>
+          <li>Drop Duplicates, Handle Outliers</li>
+          <li>Convert Data Types</li>
+          <li>New Columns, Date Parsing</li>
+          <li>Exploratory Data Analysis</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="toggle-section">
+      <h2>6. Visualization</h2>
+      <div class="section-content">
+        <ul>
+          <li>Matplotlib: plot, hist, bar</li>
+          <li>Seaborn: heatmap, pairplot</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="toggle-section">
+      <h2>7. Scikit-learn – Machine Learning</h2>
+      <div class="section-content">
+        <ul>
+          <li>Train/Test Split</li>
+          <li>Regression, Classification Models</li>
+          <li>Model Evaluation Metrics</li>
+          <li>Feature Scaling, Cross-Validation</li>
+          <li>GridSearchCV</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="toggle-section">
+      <h2>8. Project Practice</h2>
+      <div class="section-content">
+        <ul>
+          <li>Titanic Dataset</li>
+          <li>Iris Flower Classification</li>
+          <li>House Price Prediction</li>
+          <li>Customer Churn Analysis</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Python for Data Science | Showcase for GitHub Pages
+  </footer>
+
+  <script>
+    document.querySelectorAll('.toggle-section h2').forEach(header => {
+      header.addEventListener('click', () => {
+        const section = header.parentElement;
+        section.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
